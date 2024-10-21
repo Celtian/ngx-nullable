@@ -4,15 +4,34 @@
   "cli": {
     "packageManager": "yarn"
   },
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "skipTests": true,
+        "changeDetection": "OnPush",
+        "style": "css"
+      },
+      "class": {
+        "skipTests": true
+      },
+      "directive": {
+        "skipTests": true
+      },
+      "guard": {
+        "skipTests": true
+      },
+      "service": {
+        "skipTests": true
+      },
+      "resolver": {
+        "skipTests": true
+      }
+    }
+  },
   "newProjectRoot": "projects",
   "projects": {
     "demo": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
       "root": "projects/demo",
       "sourceRoot": "projects/demo/src",
       "prefix": "app",

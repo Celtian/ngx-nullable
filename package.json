@@ -1,16 +1,36 @@
 {
   "name": "ngx-nullable",
   "version": "0.0.0",
+  "author": {
+    "name": "Dominik Hladík",
+    "email": "dominik.hladik@seznam.cz",
+    "url": "https://github.com/Celtian"
+  },
+  "private": true,
+  "license": "MIT",
+  "description": "This library provides a way to make properties nullable in Angular templates.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:demo": "ng build demo --configuration production",
+    "build": "ng build ngx-nullable --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prepare": "husky"
+    "script:create-version": "yarn tsx ./scripts/create-version.ts",
+    "script:sync-projects": "yarn tsx ./scripts/sync-projects.ts",
+    "script:gpr-setup": "yarn tsx ./scripts/gpr-setup.ts",
+    "postinstall": "yarn script:create-version",
+    "prepare": "husky",
+    "version": "yarn script:sync-projects && git add projects/ngx-nullable/ && auto-changelog -p && git add CHANGELOG.md",
+    "postversion": "git push && git push --follow-tags",
+    "publish:beta": "yarn && yarn build && npm publish --folder dist --tag beta",
+    "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",
+    "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
+    "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
+    "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \"",
+    "fix-vulnerabilities": "npx yarn-audit-fix && npx browserslist --update-db"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/common": "^18.2.0",
@@ -30,9 +50,12 @@
     "@angular/compiler-cli": "^18.2.0",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-angular": "^19.5.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "18.4.0",
+    "auto-changelog": "^2.5.0",
     "eslint": "^9.13.0",
+    "fs-extra": "^11.2.0",
     "husky": "^9.1.6",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
@@ -43,7 +66,32 @@
     "lint-staged": "^15.2.10",
     "ng-packagr": "^18.2.0",
     "prettier": "^3.3.3",
+    "tsx": "^4.19.1",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.10.0"
+  },
+  "engines": {
+    "node": ">=22 <24",
+    "npm": "please-use-yarn"
+  },
+  "homepage": "https://github.com/Celtian/ngx-nullable",
+  "repository": {
+    "url": "git+https://github.com/Celtian/ngx-nullable.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/Celtian/ngx-nullable/issues"
+  },
+  "keywords": [
+    "angular",
+    "coercion",
+    "ngx",
+    "nullable"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
