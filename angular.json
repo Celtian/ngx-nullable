@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo/**/*.ts",
+              "projects/demo/**/*.html"
+            ],
+            "eslintConfig": "projects/demo/eslint.config.js"
+          }
         }
       }
     },
@@ -130,6 +140,16 @@
               "zone.js",
               "zone.js/testing"
             ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-nullable/**/*.ts",
+              "projects/ngx-nullable/**/*.html"
+            ],
+            "eslintConfig": "projects/ngx-nullable/eslint.config.js"
           }
         }
       }
