@@ -1,27 +1,113 @@
 # NgxNullable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+[![npm version](https://badge.fury.io/js/ngx-nullable.svg)](https://badge.fury.io/js/ngx-nullable)
+[![Package License](https://img.shields.io/npm/l/ngx-nullable.svg)](https://www.npmjs.com/ngx-nullable)
+[![NPM Downloads](https://img.shields.io/npm/dm/ngx-nullable.svg)](https://www.npmjs.com/ngx-nullable)
+[![Snyk](https://snyk.io/advisor/npm-package/ngx-nullable/badge.svg)](https://snyk.io/advisor/npm-package/ngx-nullable)
+[![codecov](https://codecov.io/gh/Celtian/ngx-nullable/branch/master/graph/badge.svg?token=1IRUKIKM0D)](https://codecov.io/gh/celtian/ngx-nullable/)
+[![stars](https://badgen.net/github/stars/celtian/ngx-nullable)](https://github.com/celtian/ngx-nullable/)
+[![forks](https://badgen.net/github/forks/celtian/ngx-nullable)](https://github.com/celtian/ngx-nullable/)
+[![HitCount](http://hits.dwyl.com/celtian/ngx-nullable.svg)](http://hits.dwyl.com/celtian/ngx-nullable)
 
-## Development server
+This library provides a way to make properties nullable in Angular templates.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> ✓ _Angular 18 compatible_
 
-## Code scaffolding
+Here's the [demo](http://celtian.github.io/ngx-nullable/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Lightweight
+- No dependencies!
 
-## Build
+## 🛠️ Install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Use yarn (or npm) to install the package
 
-## Running unit tests
+```terminal
+yarn add ngx-nullable
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Add `provideNullable` into your config (optional)
 
-## Running end-to-end tests
+```typescript
+import { provideNullable } from 'ngx-nullable';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+export const appConfig: ApplicationConfig = {
+  providers: [
+    // ...
+    provideNullable({
+      character: '---',
+      separator: ' | ',
+      displayZero: true
+    })
+  ]
+};
+```
 
-## Further help
+or module
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```typescript
+  import { provideNullable } from 'ngx-nullable';
+
+  @NgModule({
+   // ...
+   providers: [
+     // ...
+     provideNullable({
+       character: '---',
+       separator: ' | ',
+       displayZero: true
+     })
+   ]
+  })
+```
+
+## 🚀 Quick start
+
+### Pipe example
+
+```html
+<ul>
+  <li>{{ -1000 | ngxNullable }}</li>
+  <li>{{ 1000 | ngxNullable }}</li>
+  <li>{{ 0 | ngxNullable }}</li>
+  <li>{{ null | ngxNullable }}</li>
+  <li>{{ undefined | ngxNullable }}</li>
+  <li>{{ 'string' | ngxNullable }}</li>
+  <li>{{ '' | ngxNullable }}</li>
+  <li>{{ ' ' | ngxNullable }}</li>
+</ul>
+
+<ul>
+  <li>{{ ['', ' ', undefined, null] | ngxNullableJoin }}</li>
+  <li>{{ ['AAA', 'BBB', 'CCC'] | ngxNullableJoin }}</li>
+  <li>{{ ['AAA', '', ' ', undefined, null, 'BBB'] | ngxNullableJoin }}</li>
+  <li>{{ [] | ngxNullableJoin }}</li>
+</ul>
+```
+
+### Signals example
+
+```Typescript
+
+@Component({
+  // ...
+})
+class Example {
+  private readonly nullable = inject(NgxNullableService);
+  public readonly input = signal<string>('');
+  public readonly computed = computed(() => this.nullable.fromString(this.input()));
+}
+
+```
+
+## 📦 Dependencies
+
+_None_
+
+## 🪪 License
+
+Copyright &copy; 2024 [Dominik Hladik](https://github.com/Celtian)
+
+All contents are licensed under the [MIT license].
+
+[mit license]: LICENSE

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { NgxNullableJoinPipe } from '../../../ngx-nullable/src/lib/ngx-nullable-join.pipe';
-import { NgxNullablePipe } from '../../../ngx-nullable/src/public-api';
+import { NgxNullablePipe, NgxNullableService } from '../../../ngx-nullable/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +11,7 @@ import { NgxNullablePipe } from '../../../ngx-nullable/src/public-api';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'demo';
+  private readonly nullable = inject(NgxNullableService);
+  public readonly input = signal<string>('');
+  public readonly computed = computed(() => this.nullable.fromString(this.input()));
 }

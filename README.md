@@ -63,7 +63,7 @@ or module
 
 ## 🚀 Quick start
 
-### Directive example
+### Pipe example
 
 ```html
 <ul>
@@ -83,6 +83,21 @@ or module
   <li>{{ ['AAA', '', ' ', undefined, null, 'BBB'] | ngxNullableJoin }}</li>
   <li>{{ [] | ngxNullableJoin }}</li>
 </ul>
+```
+
+### Signals example
+
+```Typescript
+
+@Component({
+  // ...
+})
+class Example {
+  private readonly nullable = inject(NgxNullableService);
+  public readonly input = signal<string>('');
+  public readonly computed = computed(() => this.nullable.fromString(this.input()));
+}
+
 ```
 
 ## 📦 Dependencies
