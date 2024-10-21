@@ -1,15 +1,17 @@
-{{ -1000 | ngxNullable }}
+<ul>
+  <li>{{ -1000 | ngxNullable }}</li>
+  <li>{{ 1000 | ngxNullable }}</li>
+  <li>{{ 0 | ngxNullable }}</li>
+  <li>{{ null | ngxNullable }}</li>
+  <li>{{ undefined | ngxNullable }}</li>
+  <li>{{ 'string' | ngxNullable }}</li>
+  <li>{{ '' | ngxNullable }}</li>
+  <li>{{ ' ' | ngxNullable }}</li>
+</ul>
 
-{{ 1000 | ngxNullable }}
-
-{{ 0 | ngxNullable }}
-
-{{ null | ngxNullable }}
-
-{{ undefined | ngxNullable }}
-
-{{ 'string' | ngxNullable }}
-
-{{ '' | ngxNullable }}
-
-{{ ' ' | ngxNullable }}
+<ul>
+  <li>{{ ['', '   ', undefined, null] | ngxNullableJoin }}</li>
+  <li>{{ ['AAA', 'BBB', 'CCC'] | ngxNullableJoin }}</li>
+  <li>{{ ['AAA', '', '  ', undefined, null, 'BBB'] | ngxNullableJoin }}</li>
+  <li>{{ [] | ngxNullableJoin }}</li>
+</ul>

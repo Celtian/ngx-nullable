@@ -3,10 +3,10 @@ import { NgxNullable } from './ngx-nullable.interface';
 import { NgxNullableService } from './ngx-nullable.service';
 
 @Pipe({
-  name: 'nullableJoin',
+  name: 'ngxNullableJoin',
   standalone: true
 })
-export class NullableJoinPipe implements PipeTransform {
+export class NgxNullableJoinPipe implements PipeTransform {
   private readonly nullable = inject(NgxNullableService);
 
   public transform(array: NgxNullable<string>[], separator?: string): unknown {

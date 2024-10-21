@@ -1,12 +1,12 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideNullable } from '../../../ngx-nullable/src/lib/ngx-nullable.provider';
+import { provideNullable } from '../../../ngx-nullable/src/public-api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideNullable({
-      character: '🦄',
-      separator: ' ',
+      character: '---',
+      separator: ' | ',
       displayZero: true
     })
   ]
