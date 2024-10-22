@@ -103,6 +103,16 @@ class Example {
 
 ```
 
+## 🛠️ Options
+
+### Root options
+
+| Option          | Type    | Default | Description                                                  |
+| --------------- | ------- | ------- | ------------------------------------------------------------ |
+| **character**   | string  | '—'     | The character to display when the value is null or undefined |
+| **separator**   | string  | ', '    | The separator to use when joining multiple values            |
+| **displayZero** | boolean | true    | Whether to display zero when the value is zero               |
+
 ## 📦 Dependencies
 
 _None_
