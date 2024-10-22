@@ -1,4 +1,7 @@
-# NgxNullable
+<p align="center">
+  <a href="https://github.com/Celtian/ngx-nullable" target="blank"><img src="assets/logo.svg?sanitize=true" alt="" width="120"></a>
+  <h1 align="center">NgxNullable</h1>
+</p>
 
 [![npm version](https://badge.fury.io/js/ngx-nullable.svg)](https://badge.fury.io/js/ngx-nullable)
 [![Package License](https://img.shields.io/npm/l/ngx-nullable.svg)](https://www.npmjs.com/ngx-nullable)
