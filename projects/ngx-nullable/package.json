@@ -1,15 +1,36 @@
 {
   "name": "ngx-nullable",
   "version": "0.0.1",
+  "author": {
+    "name": "Dominik Hladík",
+    "email": "dominik.hladik@seznam.cz",
+    "url": "https://github.com/Celtian"
+  },
+  "private": false,
+  "license": "MIT",
+  "description": "This library provides a way to make properties nullable in Angular templates.",
   "peerDependencies": {
-    "@angular/common": "^18.2.0",
-    "@angular/core": "^18.2.0"
+    "@angular/common": ">=18",
+    "@angular/core": ">=18"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "sideEffects": false,
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/Celtian/ngx-nullable",
+  "repository": {
+    "url": "git+https://github.com/Celtian/ngx-nullable.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/Celtian/ngx-nullable/issues"
+  },
+  "keywords": [
+    "angular",
+    "coercion",
+    "ngx",
+    "nullable"
+  ],
+  "engines": {
+    "node": ">=18"
   }
 }
