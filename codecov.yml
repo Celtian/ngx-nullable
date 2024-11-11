@@ -1,3 +1,9 @@
+codecov:
+  branch: main
+
+ignore:
+  - 'projects/demo'
+
 coverage:
   status:
     project:
