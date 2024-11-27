@@ -5,7 +5,6 @@ import { VERSION } from '../environments/version';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [NgxNullablePipe, NgxNullableJoinPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
