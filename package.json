@@ -6,7 +6,7 @@
     "email": "dominik.hladik@seznam.cz",
     "url": "https://github.com/Celtian"
   },
-  "private": true,
+  "private": false,
   "license": "MIT",
   "description": "This library provides a way to make properties nullable in Angular templates.",
   "scripts": {
