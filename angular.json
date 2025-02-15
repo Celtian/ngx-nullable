@@ -46,7 +46,6 @@
               "zone.js"
             ],
             "tsConfig": "projects/demo/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -54,7 +53,7 @@
               }
             ],
             "styles": [
-              "projects/demo/src/styles.scss"
+              "projects/demo/src/styles.css"
             ],
             "scripts": []
           },
