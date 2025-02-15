@@ -8,7 +8,7 @@ import { VERSION } from '../environments/version';
   standalone: true,
   imports: [NgxNullablePipe, NgxNullableJoinPipe],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
