@@ -35,6 +35,9 @@ jobs:
       - name: 🧪 Run tests
         run: npx jest --ci --json --coverage --testLocationInResults --outputFile=coverage/report.json
 
+      - name: Debug
+        run: ls -alt coverage
+
       - name: 🧪 Create coverage report markdown
         uses: ArtiomTr/jest-coverage-report-action@v2
         id: coverage
