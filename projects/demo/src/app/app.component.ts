@@ -5,8 +5,8 @@ import { VERSION } from '../environments/version';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [NgxNullablePipe, NgxNullableJoinPipe],
+  standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
