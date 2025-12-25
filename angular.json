@@ -91,7 +91,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "coverageExclude": ["projects/**/environments/**"]
+            "coverageExclude": ["projects/**/environments/**"],
+            "coverageReporters": ["text", "html","cobertura"]
           }
         },
         "lint": {
@@ -127,7 +128,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json"
+            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json",
+            "coverageReporters": ["text", "html","cobertura"]
           }
         },
         "lint": {
