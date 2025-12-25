@@ -33,7 +33,7 @@ jobs:
         run: yarn check-circular-dependencies
 
       - name: 🧪 Run tests
-        run: npx jest --ci --json --coverage --testLocationInResults --outputFile=coverage/report.json
+        run: yarn test --project ngx-nullable demo --coverage
 
       - name: 🧪 Create coverage report markdown
         uses: ArtiomTr/jest-coverage-report-action@v2

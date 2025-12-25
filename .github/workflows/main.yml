@@ -33,7 +33,7 @@ jobs:
         run: yarn check-circular-dependencies
 
       - name: 🧪 Run tests
-        run: yarn test:jest
+        run: yarn test --project ngx-nullable --coverage
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4

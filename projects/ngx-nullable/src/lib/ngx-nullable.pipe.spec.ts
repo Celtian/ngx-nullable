@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { NgxNullablePipe } from './ngx-nullable.pipe';
 import { provideNullable } from './ngx-nullable.provider';
 import { NgxNullableService } from './ngx-nullable.service';
@@ -50,7 +51,7 @@ describe('NgxNullablePipe', () => {
       const input = 'hello';
 
       // Spy on the service's fromString method
-      const fromStringSpy = jest.spyOn(nullableService, 'fromString').mockReturnValue(input);
+      const fromStringSpy = vi.spyOn(nullableService, 'fromString').mockReturnValue(input);
 
       const result = pipe.transform(input);
       expect(result).toBe('hello');
@@ -61,7 +62,7 @@ describe('NgxNullablePipe', () => {
       const nullableChar = '-';
 
       // Mock the fromString method to return the nullable character for null or undefined values
-      jest.spyOn(nullableService, 'fromString').mockReturnValue(nullableChar);
+      vi.spyOn(nullableService, 'fromString').mockReturnValue(nullableChar);
 
       expect(pipe.transform(null)).toBe(nullableChar);
       expect(pipe.transform(undefined)).toBe(nullableChar);
@@ -92,7 +93,7 @@ describe('NgxNullablePipe', () => {
       const input = 42;
 
       // Spy on the service's fromNumber method
-      const fromNumberSpy = jest.spyOn(nullableService, 'fromNumber').mockReturnValue(input);
+      const fromNumberSpy = vi.spyOn(nullableService, 'fromNumber').mockReturnValue(input);
 
       const result = pipe.transform(input);
       expect(result).toBe(42);
@@ -103,7 +104,7 @@ describe('NgxNullablePipe', () => {
       const input = 0;
 
       // Spy on the service's fromNumber method
-      const fromNumberSpy = jest.spyOn(nullableService, 'fromNumber').mockReturnValue(0);
+      const fromNumberSpy = vi.spyOn(nullableService, 'fromNumber').mockReturnValue(0);
 
       const result = pipe.transform(input);
       expect(result).toBe(0);
@@ -114,7 +115,7 @@ describe('NgxNullablePipe', () => {
       const nullableChar = '-';
 
       // Mock the fromNumber method to return the nullable character for null or undefined numbers
-      jest.spyOn(nullableService, 'fromNumber').mockReturnValue(nullableChar);
+      vi.spyOn(nullableService, 'fromNumber').mockReturnValue(nullableChar);
 
       expect(pipe.transform(null)).toBe(nullableChar);
       expect(pipe.transform(undefined)).toBe(nullableChar);
@@ -146,7 +147,7 @@ describe('NgxNullablePipe', () => {
       const nullableChar = '-';
 
       // Spy on the service's fromNumber method
-      const fromNumberSpy = jest.spyOn(nullableService, 'fromNumber').mockReturnValue(nullableChar);
+      const fromNumberSpy = vi.spyOn(nullableService, 'fromNumber').mockReturnValue(nullableChar);
 
       const result = pipe.transform(input);
       expect(result).toBe(nullableChar);

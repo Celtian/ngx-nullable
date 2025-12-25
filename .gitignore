@@ -36,6 +36,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+__screenshots__/
 
 # System files
 .DS_Store
@@ -43,4 +44,3 @@ Thumbs.db
 
 # Temporary files
 version.ts
-.swc

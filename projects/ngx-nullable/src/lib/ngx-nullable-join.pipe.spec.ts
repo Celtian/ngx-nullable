@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { NgxNullableJoinPipe } from './ngx-nullable-join.pipe';
 import { provideNullable } from './ngx-nullable.provider';
 import { NgxNullableService } from './ngx-nullable.service';
@@ -32,7 +33,7 @@ describe('NgxNullableJoinPipe', () => {
     const separator = '-';
 
     // Spy on the service's join method to ensure it is called correctly
-    const joinSpy = jest.spyOn(nullableService, 'join').mockReturnValue('hello-world');
+    const joinSpy = vi.spyOn(nullableService, 'join').mockReturnValue('hello-world');
 
     const result = pipe.transform(array, separator);
     expect(result).toBe('hello-world');
@@ -43,7 +44,7 @@ describe('NgxNullableJoinPipe', () => {
     const array = ['hello', 'world'];
 
     // Spy on the service's join method to ensure it is called with the default separator
-    const joinSpy = jest.spyOn(nullableService, 'join').mockReturnValue('hello,world');
+    const joinSpy = vi.spyOn(nullableService, 'join').mockReturnValue('hello,world');
 
     const result = pipe.transform(array);
     expect(result).toBe('hello,world');
@@ -54,7 +55,7 @@ describe('NgxNullableJoinPipe', () => {
     const emptyArray: string[] = [];
 
     // Mock the join method to return the nullable character for empty arrays
-    jest.spyOn(nullableService, 'join').mockReturnValue('-');
+    vi.spyOn(nullableService, 'join').mockReturnValue('-');
 
     const result = pipe.transform(emptyArray);
     expect(result).toBe('-');
