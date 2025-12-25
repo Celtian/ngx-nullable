@@ -38,12 +38,12 @@ jobs:
       - name: 🧪 Report code coverage (ngx-nullable)
         uses: ./.github/actions/report-pr
         with:
-          coverage-file: coverage/ngx-nullable/cobertura-coverage.xml
+          coverage-file: /github/workspace/coverage/ngx-nullable/cobertura-coverage.xml
 
       - name: 🧪 Report code coverage (demo)
         uses: ./.github/actions/report-pr
         with:
-          coverage-file: coverage/demo/cobertura-coverage.xml
+          coverage-file: /github/workspace/coverage/demo/cobertura-coverage.xml
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
