@@ -38,7 +38,7 @@ jobs:
       - name: 🧪 Report code coverage
         uses: ./.github/actions/report-pr
         with:
-          coverage-file: coverage/**/*/clover.xml
+          coverage-file: coverage/**/*/coverage-final.json
 
       # - name: 🧪 Report code coverage (ngx-nullable)
       #   uses: ./.github/actions/report-pr
