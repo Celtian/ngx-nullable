@@ -35,8 +35,15 @@ jobs:
       - name: 🧪 Run tests
         run: yarn test --project ngx-nullable demo --coverage
 
-      - name: 🧪 Report code coverage
+      - name: 🧪 Report code coverage (ngx-nullable)
         uses: ./.github/actions/report-pr
+        with:
+          coverage-file: coverage/ngx-nullable/clover.xml
+
+      - name: 🧪 Report code coverage (demo)
+        uses: ./.github/actions/report-pr
+        with:
+          coverage-file: coverage/demo/clover.xml
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
