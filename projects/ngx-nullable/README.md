@@ -14,7 +14,7 @@
 
 This library provides a way to make properties nullable in Angular templates.
 
-> ✓ _21 compatible_
+> ✓ _Angular 21 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-nullable/)
 
