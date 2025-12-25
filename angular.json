@@ -89,7 +89,12 @@
           "defaultConfiguration": "development"
         },
         "test": {
-          "builder": "@angular/build:unit-test"
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "exclude": [
+              "projects/**/environments/**"
+            ]
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -124,7 +129,10 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json"
+            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json",
+            "exclude": [
+              "projects/**/environments/**"
+            ]
           }
         },
         "lint": {
