@@ -91,9 +91,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "exclude": [
-              "projects/**/environments/**"
-            ]
+            "coverageExclude": ["projects/**/environments/**"]
           }
         },
         "lint": {
@@ -129,10 +127,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json",
-            "exclude": [
-              "projects/**/environments/**"
-            ]
+            "tsConfig": "projects/ngx-nullable/tsconfig.spec.json"
           }
         },
         "lint": {
