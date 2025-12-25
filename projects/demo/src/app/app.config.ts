@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideNullable } from '../../../ngx-nullable/src/public-api';
+import { provideNullable } from 'ngx-nullable';
 
 export const appConfig: ApplicationConfig = {
   providers: [

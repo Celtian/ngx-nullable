@@ -91,7 +91,10 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "coverageExclude": ["projects/**/environments/**"],
+            "coverageExclude": [
+              "projects/**/environments/**",
+              "projects/ngx-nullable/**"
+            ],
             "coverageReporters": ["text", "html","cobertura"]
           }
         },

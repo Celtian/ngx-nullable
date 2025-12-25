@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { provideNullable } from '../../../ngx-nullable/src/public-api';
+import { provideNullable } from 'ngx-nullable';
 import { App } from './app';
 
 describe('App', () => {

@@ -1,5 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { NgxNullableJoinPipe, NgxNullablePipe, NgxNullableService } from '../../../ngx-nullable/src/public-api';
+import { NgxNullableJoinPipe, NgxNullablePipe, NgxNullableService } from 'ngx-nullable';
 import { VERSION } from '../environments/version';
 
 @Component({
@@ -10,7 +10,7 @@ import { VERSION } from '../environments/version';
 })
 export class App {
   private readonly nullable = inject(NgxNullableService);
-  protected readonly title = signal('ngx-nullable');
+  public readonly title = signal('ngx-nullable');
   public readonly version = VERSION;
   public readonly input = signal<string>('');
   public readonly computed = computed(() => this.nullable.fromString(this.input()));
