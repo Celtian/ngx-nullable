@@ -32,20 +32,16 @@ jobs:
       - name: ♻️ Check circular dependencies
         run: yarn check-circular-dependencies
 
-      - name: 🧪 Run tests
-        run: |
-          yarn test ngx-nullable --coverage
-          yarn test demo --coverage
+      - name: 🧪 Run tests (ngx-nullable)
+        run: yarn test ngx-nullable --coverage
 
-      - name: 🧪 Report code coverage (ngx-nullable)
+      - name: 🧪 Run tests (demo)
+        run: yarn test demo --coverage
+
+      - name: 🧪 Report code coverage
         uses: ./.github/actions/report-pr
         with:
-          coverage-file: coverage/ngx-nullable/cobertura-coverage.xml
-
-      - name: 🧪 Report code coverage (demo)
-        uses: ./.github/actions/report-pr
-        with:
-          coverage-file: coverage/demo/cobertura-coverage.xml
+          coverage-file: coverage/**/cobertura-coverage.xml
 
       - name: ⬆️ Upload coverage reports
         uses: codecov/codecov-action@v4
