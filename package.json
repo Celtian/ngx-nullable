@@ -83,6 +83,13 @@
   "bugs": {
     "url": "https://github.com/Celtian/ngx-nullable/issues"
   },
+  "auto-changelog": {
+    "remote": "none",
+    "commitUrl": "https://github.com/Celtian/ngx-nullable/commit/{id}",
+    "issueUrl": "https://github.com/Celtian/ngx-nullable/issues/{id}",
+    "mergeUrl": "https://github.com/Celtian/ngx-nullable/pull/{id}",
+    "compareUrl": "https://github.com/Celtian/ngx-nullable/compare/{from}...{to}"
+  },
   "keywords": [
     "angular",
     "coercion",
