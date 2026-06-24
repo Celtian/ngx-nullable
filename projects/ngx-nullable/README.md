@@ -14,7 +14,7 @@
 
 This library provides a way to make properties nullable in Angular templates.
 
-> ✓ _Angular 21 compatible_
+> ✓ _Angular 22 compatible_
 
 Here's the [demo](http://celtian.github.io/ngx-nullable/)
 
@@ -112,6 +112,13 @@ class Example {
 | **character**   | string  | '—'     | The character to display when the value is null or undefined |
 | **separator**   | string  | ', '    | The separator to use when joining multiple values            |
 | **displayZero** | boolean | true    | Whether to display zero when the value is zero               |
+
+## 🔧 Compatibility
+
+| Angular    | ngx-fixed-footer | Install                       |
+| ---------- | ---------------- | ----------------------------- |
+| >= 22      | 1.x              | `yarn add ngx-fixed-footer`   |
+| >= 18 < 21 | 0.x              | `yarn add ngx-fixed-footer@0` |
 
 ## 📦 Dependencies
 
