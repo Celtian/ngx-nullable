@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { NgxNullableJoinPipe, NgxNullablePipe, NgxNullableService } from 'ngx-nullable';
 import { VERSION } from '../environments/version';
 
@@ -6,7 +6,8 @@ import { VERSION } from '../environments/version';
   selector: 'app-root',
   imports: [NgxNullablePipe, NgxNullableJoinPipe],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
   private readonly nullable = inject(NgxNullableService);
