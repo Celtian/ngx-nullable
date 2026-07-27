@@ -2,32 +2,32 @@
 
 ## Project Overview
 
-This is an Angular 22 workspace managed with Yarn 1. It contains:
+This is an Angular 22 workspace managed with Bun. It contains:
 
 - `projects/ngx-nullable`: the publishable `ngx-nullable` library.
 - `projects/demo`: the demo application used to exercise and document the library.
 - `scripts`: release and package synchronization utilities.
 
-Use Node.js 24 for development and CI. Use `yarn`, not `npm`, to manage dependencies.
+Use Node.js 24 for development and CI. Use Bun 1.3.14 to manage dependencies.
 
 ## Common Commands
 
-- `yarn start`: run the demo application locally.
-- `yarn build`: build the library in production mode.
-- `yarn build:demo`: build the demo application in production mode.
-- `yarn lint`: lint both workspace projects.
-- `yarn test ngx-nullable`: run the library tests.
-- `yarn test demo`: run the demo tests.
-- `yarn check-circular-dependencies`: check the library entry points for circular dependencies.
+- `bun run start`: run the demo application locally.
+- `bun run build`: build the library in production mode.
+- `bun run build:demo`: build the demo application in production mode.
+- `bun run lint`: lint both workspace projects.
+- `bun run test ngx-nullable`: run the library tests.
+- `bun run test demo`: run the demo tests.
+- `bun run check-circular-dependencies`: check the library entry points for circular dependencies.
 
-Prefer targeted tests while developing. Before completing a source change, run the relevant tests and lint checks. For changes that affect packaging or the public API, also run `yarn build`.
+Prefer targeted tests while developing. Before completing a source change, run the relevant tests and lint checks. For changes that affect packaging or the public API, also run `bun run build`.
 
 ## Source and API Conventions
 
 - Library implementation belongs in `projects/ngx-nullable/src/lib`.
 - Export every intended public symbol from `projects/ngx-nullable/src/public-api.ts`.
 - Keep demo-only code in `projects/demo`; do not make the library depend on the demo.
-- Treat `projects/demo/src/environments/version.ts` as generated output. It is created by `yarn postinstall`; do not edit or commit it.
+- Treat `projects/demo/src/environments/version.ts` as generated output. It is created by `bun run postinstall`; do not edit or commit it.
 - `scripts/sync-projects.ts` synchronizes package metadata and the README during releases. Do not run release or publish scripts unless explicitly requested.
 - Update the root `README.md` when changing installation, configuration, behavior, or the public API.
 - Preserve compatibility with the peer dependency range declared in `projects/ngx-nullable/package.json`.

@@ -23,10 +23,10 @@ Here's the [demo](http://celtian.github.io/ngx-nullable/)
 
 ## 🛠️ Install
 
-1. Use yarn (or npm) to install the package
+1. Use Bun to install the package
 
 ```terminal
-yarn add ngx-nullable
+bun add ngx-nullable
 ```
 
 2. Add `provideNullable` into your config (optional)
@@ -115,10 +115,10 @@ class Example {
 
 ## 🔧 Compatibility
 
-| Angular    | ngx-fixed-footer | Install                       |
-| ---------- | ---------------- | ----------------------------- |
-| >= 22      | 1.x              | `yarn add ngx-fixed-footer`   |
-| >= 18 < 21 | 0.x              | `yarn add ngx-fixed-footer@0` |
+| Angular    | ngx-nullable | Install                    |
+| ---------- | ------------ | -------------------------- |
+| >= 22      | 1.x          | `bun add ngx-nullable`     |
+| >= 18 < 21 | 0.x          | `bun add ngx-nullable@0`   |
 
 ## 📦 Dependencies
 
