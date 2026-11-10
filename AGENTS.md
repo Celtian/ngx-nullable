@@ -8,7 +8,7 @@ This is an Angular 22 workspace managed with Bun. It contains:
 - `projects/demo`: the demo application used to exercise and document the library.
 - `scripts`: release and package synchronization utilities.
 
-Use Node.js 24 for development and CI. Use Bun 1.3.14 to manage dependencies.
+Use Node.js 24 for development and CI. Use Bun 1.4.4 to manage dependencies.
 
 ## Common Commands
 
